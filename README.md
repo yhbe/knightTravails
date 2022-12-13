@@ -16,13 +16,13 @@ When creating a new 'Graph()' the return is a new Map obj "board".
 
 New 'Graph()' objects have 3 functions available to them.
 
-#1. Create graph vertices (`setVertices() `)
+#1. Create graph vertices (`setVertices() `)  
 This function sets up all the coordinates of the graph from [0,0] to [7,7]
 
-#2. Connect graph edges (`setPlayableKnightMoves()`)
+#2. Connect graph edges (`setPlayableKnightMoves()`)  
 Connects all possible knight moves at each position of graph
 
-#3. Utilize DFS to find the shortest possible route from start to end (`knightMove(start, end)`)
+#3. Utilize DFS to find the shortest possible route from start to end (`knightMove(start, end)`)  
 Knight Move accepts a starting and end point for a Knight chess piece (from ["0,0"] to ["7,7"]),
 returning a console.log of the fastest path.
 
