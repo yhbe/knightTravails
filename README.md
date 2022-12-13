@@ -24,18 +24,7 @@ New 'Graph()' objects have 3 methods available to them.
 
 #3. Utilize DFS to find the shortest possible route from start to end (`.knightMove(start, end)`)
 -Knight Move accepts a starting and end point for a Knight chess piece (from ["0,0"] to ["7,7"]),
-#1. Create graph vertices (`setVertices() `)
-
-> Sets up all the coordinates of the graph from [0,0] to [7,7]
-
-#2. Connect graph edges (`setPlayableKnightMoves()`)
-
-> Connects all possible knight moves at each position of graph
-
-#3. Utilize DFS to find the shortest possible route from start to end (`knightMove(start, end)`)
-
-> Accepts a starting and end point for a Knight chess piece (from ["0,0"] to ["7,7"]),
-> returning a console.log of the fastest path.
+returning a console.log of the fastest path.
 
 ```javascript
 class Graph {
