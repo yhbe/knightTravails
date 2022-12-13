@@ -1,19 +1,18 @@
 class Graph {
   constructor() {
     return {
-      board: null,
+      board: new Map(),
       setVertices,
       setPlayableKnightMoves,
       knightMove,
     };
     function setVertices() {
-      let map = new Map();
       for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
-          map.set(`${[i, j]}`, []);
+          this.board.set(`${[i, j]}`, []);
         }
       }
-      return (this.board = map);
+      return this.board;
     }
 
     function setPlayableKnightMoves() {
@@ -66,7 +65,7 @@ class Graph {
           }
         }
       }
-      console.log(`Your path from [${start}] to [${end}]`);
+      console.log(`The fastest path from [${start}] to [${end}]`);
       finishedPath.forEach((elem) => console.log(elem));
     }
   }
@@ -76,3 +75,5 @@ let graph = new Graph();
 graph.setVertices();
 graph.setPlayableKnightMoves();
 graph.knightMove(["0,0"], ["1,2"]);
+// graph.knightMove(["5,4"], ["7,7"]);
+// graph.knightMove(["3,3"], ["2,2"]);
