@@ -4,6 +4,7 @@ class Graph {
       board: null,
       createChessBoard,
       connectKnightMoves,
+      knightMove,
     };
     function createChessBoard() {
       let map = new Map();
@@ -31,12 +32,42 @@ class Graph {
           8: [x - 1, y + 2],
         };
         for (let number in knightMoves) {
-          if (this.board.has(knightMoves[number].toString())) {
-            this.board.get(elem).push(knightMoves[number]);
+          let move = knightMoves[number].toString();
+          if (
+            this.board.has(knightMoves[number].toString()) &&
+            !this.board.get(elem).includes(move)
+          ) {
+            this.board.get(elem).push(move);
           }
         }
       }
       return this.board;
+    }
+
+    function knightMove(start, end) {
+      start = start.shift();
+      end = end.shift();
+      let queue = [];
+      let visited = new Set();
+      let finishedPath = [];
+
+      queue.push([start, [start]]);
+      while (queue.length > 0) {
+        let [active, path] = queue.shift();
+        console.log(`${active} active, path ${path}`);
+        visited.add(active);
+        if (active === end) {
+          finishedPath.push(path);
+        }
+        let possibleMoves = this.board.get(active);
+        for (let elem of possibleMoves) {
+          if (!visited.has(elem)) {
+            queue.push([elem, [...path, elem]]);
+          }
+        }
+      }
+      console.log(`Your path from [${start}] to [${end}]`);
+      finishedPath.forEach((elem) => console.log(elem));
     }
   }
 }
@@ -44,3 +75,4 @@ class Graph {
 let chessMove = new Graph();
 chessMove.createChessBoard();
 chessMove.connectKnightMoves();
+chessMove.knightMove(["0,0"], ["5,4"]);
