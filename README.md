@@ -12,7 +12,7 @@ My project uses a graph data-structure that finds the shortest possible route by
 
 knightTravail.js contains a single class 'Graph()'
 
-When creating a new 'Graph()' the return is a new Map object "board".
+When creating a new 'Graph()' the return is a new Map object 'board'.
 
 New 'Graph()' objects have 3 methods available to them.
 
